@@ -112,14 +112,6 @@ section{
   background: #E8E8E8;
 }
 
-.main-container {
-  width: 1200px;
-  min-height: 10px;
-  margin: 5em auto;
-  background: #E8E8E8;
-  text-align: left;
-}
-
 .flex-container{
   width: 80%;
   background: #E8E8E8;
