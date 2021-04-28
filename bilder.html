@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bilder.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="icon" href="./images/titlelogo.png" type="image/icon type">
+</head>
+<body>
+<input type="checkbox" id="check">
+<label for="check">
+    <i class="fas fa-bars" id="btn"></i>
+    <i class="fas fa-times" id="cancel"></i>
+</label>
+    <div class="sidebar">
+    <header>Bläddra här</header>
+<ul>
+  <li><a href="frammtidenstad.html"><i class="fas fa-stream"></i>Översikt</a></li>
+  <li><a href="om.html"><i class="far fa-question-circle"></i>Om</a></li>
+  <li><a href="#"><i class="fas fa-images"></i>Bilder</a></li>
+  <li><a href="#"><i class="far fa-envelope"></i>Kontakt</a></li>
+</ul>
+</div>
+<br>
+
+
+<div class="main-container2">
+  <div class="flex-content-center"> <span class="title2">Bildgalleri</span>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="column">
+    <img src="./images/ahus_vinga.png" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="./images/hus.jpeg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="./images/huss3.jpeg"style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="./images/Tyresö_Baksida_1920x1920.jpeg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 4</div>
+      <img src="./images/ahus_vinga.png" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 4</div>
+      <img src="./images/hus.jpeg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 4</div>
+      <img src="./images/huss3.jpeg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">4 / 4</div>
+      <img src="./images/Tyresö_Baksida_1920x1920.jpeg" style="width:100%">
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+
+    <div class="column">
+      <img class="demo cursor" src="./images/ahus_vinga.png" style="width:100%" onclick="currentSlide(1)" alt="Hus1">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="./images/hus.jpeg" style="width:100%" onclick="currentSlide(2)" alt="Hus2">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="./images/huss3.jpeg" style="width:100%" onclick="currentSlide(3)" alt="Hus3">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="./images/Tyresö_Baksida_1920x1920.jpeg" style="width:100%" onclick="currentSlide(4)" alt="Hus4">
+    </div>
+  </div>
+</div>
+
+
+<div class="flex-align-center flex-content-center footer">
+  <a href="https://innovationsgymnasiet.se/har-finns-vi/helsingborg/" style="color:white" target="_blank">Tis Helsingborg </a>
+</div>
+
+
+
+
+
+
+
+
+<script>
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+
+
+</body>
+</html>
